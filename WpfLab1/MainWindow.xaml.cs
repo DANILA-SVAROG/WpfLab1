@@ -57,5 +57,18 @@ namespace WpfLab1
         {
             Scene.Children.Clear();
         }
+
+        public void DrawRectangle(MyRectangle rect)
+        {
+            Point2D p1 = rect.TopLeft;
+            Point2D p2 = new Point2D(rect.TopLeft.X + rect.Width, rect.TopLeft.Y);
+            Point2D p3 = new Point2D(rect.TopLeft.X + rect.Width, rect.TopLeft.Y + rect.Height);
+            Point2D p4 = new Point2D(rect.TopLeft.X, rect.TopLeft.Y + rect.Height);
+
+            DrawLine(p1, p2);
+            DrawLine(p2, p3);
+            DrawLine(p3, p4);
+            DrawLine(p4, p1);
+        }
     }
 }
