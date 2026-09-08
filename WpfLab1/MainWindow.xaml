@@ -25,6 +25,7 @@
             <TextBox Name="TxtY" Width="40" Text="100" VerticalAlignment="Center"/>
 
             <Button Name="BtnDrawCustom" Content="Нарисовать (X,Y)" Click="BtnDrawCustom_Click" Margin="10,0,0,0"/>
+            <Button Name="BtnMove" Content="Сдвинуть фигуры" Click="BtnMove_Click" Margin="10,0,0,0"/>
         </StackPanel>
 
         <!-- Наш холст для рисования -->

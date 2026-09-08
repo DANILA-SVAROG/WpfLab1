@@ -94,5 +94,19 @@ namespace WpfLab1
                 DrawTriangle(tr);
             }
         }
+        private void BtnMove_Click(object sender, RoutedEventArgs e)
+        {
+            // Сдвигаем все линии на холсте на 20 пикселей вправо и вниз
+            foreach (var child in Scene.Children)
+            {
+                if (child is Line line)
+                {
+                    line.X1 += 20;
+                    line.Y1 += 20;
+                    line.X2 += 20;
+                    line.Y2 += 20;
+                }
+            }
+        }
     }
 }
