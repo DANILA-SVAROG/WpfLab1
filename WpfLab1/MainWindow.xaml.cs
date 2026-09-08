@@ -70,5 +70,29 @@ namespace WpfLab1
             DrawLine(p3, p4);
             DrawLine(p4, p1);
         }
+
+        private void BtnDrawSquare_Click(object sender, RoutedEventArgs e)
+        {
+            ClearScene();
+            int size = 60;
+            // Создаем случайную точку в пределах видимости
+            Point2D p = new Point2D(rnd.Next(50, 400), rnd.Next(50, 300));
+            MyRectangle rect = new MyRectangle(p, size, size);
+
+            // Рисуем (мы ранее создали метод DrawRectangle, если нет - используй DrawLine как в DrawTriangle)
+            DrawRectangle(rect);
+        }
+
+        private void BtnDrawCustom_Click(object sender, RoutedEventArgs e)
+        {
+            // Безопасно получаем числа из текста
+            if (int.TryParse(TxtX.Text, out int x) && int.TryParse(TxtY.Text, out int y))
+            {
+                ClearScene();
+                // Рисуем треугольник по заданным координатам
+                Triangle tr = new Triangle(new Point2D(x, y), new Point2D(x + 100, y), new Point2D(x + 50, y - 80));
+                DrawTriangle(tr);
+            }
+        }
     }
 }
